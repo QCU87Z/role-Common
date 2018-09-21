@@ -23,6 +23,19 @@
     append: yes
   with_items: "{{ common_add_to_sudoers }}"
 
+- name: Disable empty password login
+  lineinfile:
+    dest: {{ common_sshd_config }}
+    regexp: "^#?PermitEmptyPasswords"
+    line: "PermitEmptyPasswords no"
+    notify: restart sshd
+
+- name: Disable root login
+  lineinfile:
+    dest: {{ common_sshd_config }}
+    regexp: "^#?PermitRootLogin"
+    line: "PermitRootLogin no"
+    notify: restart sshd
 
 - name: Enable epel
   yum:

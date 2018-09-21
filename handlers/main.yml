@@ -1,2 +1,4 @@
 ---
 # handlers file for role-Common
+- name: restart sshd
+  service: name=sshd state=restarted

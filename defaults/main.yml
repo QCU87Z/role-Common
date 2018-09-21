@@ -4,3 +4,4 @@ common_users: []
 common_authorized_users: []
 common_authorized_keys: []
 install_packages: [htop, vim]
+common_sshd_config: "/etc/ssh/sshd_config"
