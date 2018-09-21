@@ -1,5 +1,5 @@
 ---
 # defaults file for role-Common
-common_users: [batman]
-common_authorized_users: [batman, root]
-common_authorized_keys: [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJ/mr+/Q6RYRcMzdrs9SX4/nqTcIWBGM6hEfcqLbv4PPwsB/dVQZkOdhpW1yeX8nTe1XOfLM1y+8PzpbaP/CxXFYDkgVRryOFqVz6bxXjwWNq04YU5DAEGn91k4LKgajCk59u2IRATK0bUq0n7ghO/tuEFohbTgP0n11zs2LD9eDSHjFE1/tfAGvxuZBGBH04gn0Fzo3uyOMDSH2b0zqEyuvRdzKBaTNkNP/2O8p5Zh1x34Nzzzc1OiLaU2pT3vPXAFI99zUmvxAE/gQuvYQxvNHn5FhhQOp+NN9/zAkVn1jdwUf9kI1vfvjsCI6oprm6GTip7MvLQ2ioEm2gJ06Wx QCU87Z-Laptop@MacBook-Pro.local]
+common_users: []
+common_authorized_users: []
+common_authorized_keys: []
