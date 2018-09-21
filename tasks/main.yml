@@ -18,7 +18,7 @@
 
 - name: add to wheel
   user:
-    name: {{ item }}
+    name: "{{ item }}"
     groups: wheel
     append: yes
   with_items: "{{ common_add_to_sudoers }}"
