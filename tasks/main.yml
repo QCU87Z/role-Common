@@ -11,7 +11,7 @@
   with_items: "{{ common_users }}"
 
 - name: add authorized keys for users
-  authorized_key: user="{{ item[0] }}" key="{{ user[1] }}"
+  authorized_key: user="{{ item[0] }}" key="{{ item[1] }}"
   with_nested:
     - "{{ common_authorized_users }}"
     - "{{ common_authorized_keys }}"
