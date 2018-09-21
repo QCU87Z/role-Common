@@ -25,14 +25,14 @@
 
 - name: Disable empty password login
   lineinfile:
-    dest: "{{ common_sshd_config }}"
+    path: "{{ common_sshd_config }}"
     regexp: "^#?PermitEmptyPasswords"
     line: "PermitEmptyPasswords no"
     notify: restart sshd
 
 - name: Disable root login
   lineinfile:
-    dest: "{{ common_sshd_config }}"
+    path: "{{ common_sshd_config }}"
     regexp: "^#?PermitRootLogin"
     line: "PermitRootLogin no"
     notify: restart sshd
