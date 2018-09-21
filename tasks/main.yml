@@ -16,6 +16,14 @@
     - "{{ common_authorized_users }}"
     - "{{ common_authorized_keys }}"
 
+- name: add to wheel
+  user:
+    name: {{ item }}
+    groups: wheel
+    append: yes
+  with_items: "{{ common_add_to_sudoers }}"
+
+
 - name: Enable epel
   yum:
     name: epel-release
