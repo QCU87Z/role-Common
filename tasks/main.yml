@@ -1,7 +1,7 @@
 ---
 # tasks file for role-Common
 - name: create users
-  user: name="{{ item }}" shell=/bin/bash
+  user: name="{{ item }}" shell=/bin/bash password="{{ vault_user_pass }}"
   with_items: "{{ common_users }}"
 
 - name: create ssh directory for users
