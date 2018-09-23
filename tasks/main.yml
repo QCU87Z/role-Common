@@ -28,7 +28,7 @@
   with_items: "{{ install_packages }}"
 
 - name: Drop new chrony configuration
-  tempate:
+  template:
     src: chrony.conf.j2
     dest: "/etc/chrony.conf"
   notify:
