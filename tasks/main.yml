@@ -33,3 +33,7 @@
     dest: "/etc/chrony.conf"
   notify:
   - restart chrony
+
+- name: Force chrony sync
+  shell: chronyc tracking
+  become: yes
