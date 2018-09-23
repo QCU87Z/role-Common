@@ -1,28 +1,5 @@
 ---
 # tasks file for role-Common
-- name: create users
-  user: name="{{ item }}" shell=/bin/bash password="{{ vault_user_pass }}"
-  with_items: "{{ common_users }}"
-
-- name: create ssh directory for users
-  file: path="/home/{{ item }}/.ssh" state=directory
-  become: yes
-  become_user: "{{ item }}"
-  with_items: "{{ common_users }}"
-
-- name: add authorized keys for users
-  authorized_key: user="{{ item[0] }}" key="{{ item[1] }}"
-  with_nested:
-    - "{{ common_authorized_users }}"
-    - "{{ common_authorized_keys }}"
-
-- name: add to wheel
-  user:
-    name: "{{ item }}"
-    groups: wheel
-    append: yes
-  with_items: "{{ common_add_to_sudoers }}"
-
 - name: Disable empty password login
   lineinfile:
     path: "{{ common_sshd_config }}"
@@ -49,3 +26,8 @@
     name: "{{ item }}"
     state: present
   with_items: "{{ install_packages }}"
+
+- name: Drop new chrony configuration
+  tempate:
+    src: chrony.conf.j2
+    dest: "/etc/chrony.conf"

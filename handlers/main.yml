@@ -4,3 +4,8 @@
   service: 
     name: sshd 
     state: restarted
+
+- name: restart chrony
+  service:
+    name: chronyd
+    state: restarted
