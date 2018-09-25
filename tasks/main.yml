@@ -27,6 +27,12 @@
     state: present
   with_items: "{{ install_packages }}"
 
+- name: Start enable qemu agent
+  service:
+    name: "qemu-guest-agent"
+    state: started
+    enabled: yes
+
 - name: Drop new chrony configuration
   template:
     src: chrony.conf.j2
